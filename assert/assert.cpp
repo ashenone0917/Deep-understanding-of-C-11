@@ -1,0 +1,1 @@
+#include <iostream>#include <cassert>#define TEST 1int main(){	assert(0); //运行时判定，为false时弹窗终止进程	static_assert(TEST > 1, "TEST leq 1"); //编译时断言，适合用于模板类型检查	return 0;}
