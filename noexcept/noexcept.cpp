@@ -5,5 +5,26 @@ void BlockThrow() noexcept { Throw(); }; //noexcept(±í´ïÊ½)£¬±í´ïÊ½·µ»ØÎªtrueÊ±£
 //Ä¬ÈÏÖ»ÓĞnoexceptÊ±Îªnoexcept(true)
 int main()
 {
+	try {
+		Throw();
+	}
+	catch (int & n) {
+		std::cout << "throw except=" << n <<std::endl;
+	}
 
+	try {
+		NoBlockThrow();
+	}
+	catch (...) {
+		std::cout << "throw except"  << std::endl; //NoBlockThrowÄÚÃ»ÓĞcatch£¬Å×µ½ÁËmainº¯ÊıµÄcatch
+	}
+
+	try {
+		BlockThrow();
+	}
+	catch (...) {
+		std::cout << "throw except" << std::endl;//noexceptÄ¬ÈÏ£¬ËµÃ÷º¯Êı²»»áÅ×³öÒì³££¬µ«Êµ¼ÊÉÏÈ´Å×³öÁËÒì³££¬»áµ¼ÖÂµ÷ÓÃstd::terminate½áÊø½ø³Ì
+	}
+
+	return 0;
 }
