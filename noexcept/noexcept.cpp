@@ -22,8 +22,7 @@ int main()
 	try {
 		BlockThrow();
 	}
-	catch (...) {
-		std::cout << "throw except" << std::endl;//noexcept默认，说明函数不会抛出异常，但实际上却抛出了异常，会导致调用std::terminate结束进程
+	catch (...) {		std::cout << "throw except" << std::endl;//noexcept默认，说明函数不会抛出异常，但实际上却抛出了异常，会导致调用std::terminate结束进程
 	}
 
 	return 0;
