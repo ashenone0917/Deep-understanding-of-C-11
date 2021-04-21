@@ -7,3 +7,7 @@ Person::Person(const std::string& name, const Date& birthday,
 {
 
 }
+
+void Person::Print() {
+	pImpl->Print();
+}
