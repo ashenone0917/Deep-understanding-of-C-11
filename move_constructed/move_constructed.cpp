@@ -1,10 +1,9 @@
-﻿// move_constructed.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
-
+﻿
 #include <iostream>
 class MoveClass {
 public:
     MoveClass() {
+        std::cout << "construct" << std::endl;
         m_nX = new int(10);
     }
 
@@ -35,7 +34,8 @@ private:
 };
 
 MoveClass Test1() {
-    return std::move(MoveClass());
+    MoveClass test;
+    return std::move(test);
 }
 
 MoveClass Test2() {
@@ -45,5 +45,7 @@ MoveClass Test2() {
 
 int main()
 {
-    MoveClass result2 = std::move(Test1());
+    MoveClass result1 = Test1();//一次移动构造
+    std::cout << "-----------------------" << std::endl;
+    MoveClass result2 = std::move(Test1());//两次移动构造
 } 
