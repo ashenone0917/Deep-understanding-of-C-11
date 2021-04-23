@@ -45,7 +45,8 @@ MoveClass Test2() {
 
 int main()
 {
-    MoveClass result1 = Test1();//一次移动构造
+    MoveClass result1 = Test1();//一次移动构造,rvo and nrvo
+    MoveClass result2 = Test2();//rvo and nrvo，优化到直接构造
     std::cout << "-----------------------" << std::endl;
-    MoveClass result2 = std::move(Test1());//两次移动构造
+    MoveClass result3 = std::move(Test1());//两次移动构造
 } 
