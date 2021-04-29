@@ -1,30 +1,19 @@
-﻿// forward_2.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+﻿// union.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
 #include <iostream>
-using namespace std;
-template <typename T,typename U>
-void PerfectForward(T&& t, U& Func) {
-    cout << t << " \tforwarded..." << endl;
-    Func(forward<T>(t));
-}
-
-void RunCode(double&& m) {
-
-};
-
-void RunHome(double&& m) {
-
-};
-
-void RunComp(double&& m) {
-
+#include <string>
+union T
+{
+    std::string s;
+    int n;
+public:
+    T() { new (&s) std::string; }
+    ~T() { s.~basic_string(); }
 };
 int main()
-{ 
-    PerfectForward(1.5, RunCode);
-    PerfectForward(8, RunHome);
-    PerfectForward(2.5, RunComp);
+{
+    T t;
     std::cout << "Hello World!\n";
 }
 
