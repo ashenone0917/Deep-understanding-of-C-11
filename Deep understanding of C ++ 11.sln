@@ -53,6 +53,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "enum_class", "enum_class\en
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartPtr", "SmartPtr\SmartPtr.vcxproj", "{C8C3D2C8-DDAB-4117-B045-C6F299865574}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "variable_length_template_1", "variable_length_template_1\variable_length_template_1.vcxproj", "{6D555FA0-5183-4527-9FA1-1276FE5243BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -261,6 +263,14 @@ Global
 		{C8C3D2C8-DDAB-4117-B045-C6F299865574}.Release|x64.Build.0 = Release|x64
 		{C8C3D2C8-DDAB-4117-B045-C6F299865574}.Release|x86.ActiveCfg = Release|Win32
 		{C8C3D2C8-DDAB-4117-B045-C6F299865574}.Release|x86.Build.0 = Release|Win32
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Debug|x64.ActiveCfg = Debug|x64
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Debug|x64.Build.0 = Debug|x64
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Debug|x86.ActiveCfg = Debug|Win32
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Debug|x86.Build.0 = Debug|Win32
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Release|x64.ActiveCfg = Release|x64
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Release|x64.Build.0 = Release|x64
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Release|x86.ActiveCfg = Release|Win32
+		{6D555FA0-5183-4527-9FA1-1276FE5243BB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
