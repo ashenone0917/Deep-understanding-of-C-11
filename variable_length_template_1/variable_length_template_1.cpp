@@ -47,9 +47,41 @@ void Printf(const char* s, T value, Args... args) {
     throw std::runtime_error("extra arguments provided to Printf");
 }
 
+//template<typename... A>
+//class T : private B<A>...{
+//
+//};
+//上面这个模板实例化T<X,Y>将解包为
+//class T : private B<X>, private B<Y> {
+//
+//};
+
+//template<typename ...A>
+//class T : private B<A...> {
+//
+//};
+//上面这个模板实例化T<X,Y>将解包为
+//class T : private B<X，Y>{
+//
+//};
+
+
+template<typename ...T> void DummyWrapper(T... t) {};
+
+template<typename T> 
+T pr(T t) {
+    std::cout << t;
+    return t;
+}
+
+template<typename ...A>
+void VTPrint(A... a) {
+    DummyWrapper(pr(a)...);
+}
+
 int main()
 {
-
+    VTPrint(1, ", ", 1.2, ", abc\n");
     std::cout << Test::val << std::endl;
     std::cout << Multiply<2, 3, 4, 5, 6>::val << std::endl;
     std::cout << Multiply<22, 33, 44, 55, 66>::val << std::endl;
