@@ -29,6 +29,12 @@ struct HowManyBytes {
     int b;
 };
 
+struct alignas(32) ColorVector { //对齐到32字节边界
+    double r;
+    double g;
+    double b;
+    double a;
+};
 int main()
 {
 
@@ -36,5 +42,8 @@ int main()
     cout << "HowManyBytes offset of char a = " << offsetof(HowManyBytes, a) << endl;
     cout << "HowManyBytes offset of int b = " << offsetof(HowManyBytes, b) << endl;
     cout << "alignof(HowManyBytes) = " << alignof(HowManyBytes) << endl;//HowManyBytes的对齐方式
-
-}
+    cout << "alignof(ColorVector) = " << alignof(ColorVector) << endl;//ColorVector的对齐方式
+    //alignas可以接受类型作为参数
+    alignas(double) char c;
+    alignas(alignof(double)) char d;
+} 
