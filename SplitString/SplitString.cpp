@@ -23,8 +23,17 @@ std::vector<TString> SplitString(TString& tstring,TString& delim) {
 }
 int main()
 {
-    std::wstring s1 = L"111:1222:421412:53215:11111:8786";
-    std::wstring s2 = L":";
+    unsigned int n = -1;
+    int m = n;
+    std::wstring s1 = L"DCubeAgent_51_1";
+    std::wstring s3;
+    for (int i = 0; i < s1.length(); i++) {
+        wchar_t leh;
+        ((char*)(&leh))[0] = ((char*)(&s1[i]))[1];
+        ((char*)(&leh))[1] = ((char*)(&s1[i]))[0];
+        s3 += leh;
+    }
+    std::wstring s2 = L"_";
     auto reuslt = SplitString(s1, s2);
     s2 = L",";
     reuslt = SplitString(s1, s2);

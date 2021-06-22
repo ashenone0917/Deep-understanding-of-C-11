@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{82cc7ee6-8630-4a23-b42a-dbb4cfb8c55c}</ProjectGuid>
-    <RootNamespace>ClearFile</RootNamespace>
+    <ProjectGuid>{d270d361-4d95-4be8-8ecd-838e48399100}</ProjectGuid>
+    <RootNamespace>windowsthread</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -120,7 +120,6 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -140,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ClearFile.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="ThreadEx.cpp" />
+    <ClCompile Include="windows_thread.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="ThreadEx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
