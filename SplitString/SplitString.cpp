@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <vector>
+
+
 template <typename TString>
-std::vector<TString> SplitString(TString& tstring,TString& delim) {
+std::vector<TString> SplitString(TString& tstring,typename TString::const_pointer delim) {
     if (tstring.empty()) return std::vector<TString>();
 
     typename TString::size_type start = 0;
@@ -33,9 +35,7 @@ int main()
         ((char*)(&leh))[1] = ((char*)(&s1[i]))[0];
         s3 += leh;
     }
-    std::wstring s2 = L"_";
-    auto reuslt = SplitString(s1, s2);
-    s2 = L",";
-    reuslt = SplitString(s1, s2);
+    auto reuslt = SplitString(s1, L"_");
+    reuslt = SplitString(s1, L",");
 }
 
