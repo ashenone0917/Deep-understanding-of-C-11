@@ -53,6 +53,15 @@ void funct() {
 }
 int main()
 {
+    if(NULL == ::OpenEvent(SYNCHRONIZE, FALSE, L"cyc test")){
+        ERROR_SUCCESS;
+        DWORD dwErrorCode = ::GetLastError();
+        if (ERROR_FILE_NOT_FOUND == dwErrorCode) {
+            int m = 10;
+        }
+    }
+    auto Event = ::CreateEvent(NULL, TRUE, FALSE,L"cyc test");
+    auto Event1 = ::OpenEvent(SYNCHRONIZE, FALSE, L"cyc test");
     std::shared_ptr<ThreadTest> test = nullptr;
     {
         std::shared_ptr<ThreadTest> test = std::make_shared<ThreadTest>();
